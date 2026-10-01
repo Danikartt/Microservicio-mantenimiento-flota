@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: dani
+      POSTGRES_PASSWORD: dani
+      POSTGRES_DB: flota
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://dani:dani@db:5432/flota
+    volumes:
+      - .:/app
+
+volumes:
+  pgdata:
