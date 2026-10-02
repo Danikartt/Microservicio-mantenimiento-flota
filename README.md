@@ -53,9 +53,13 @@ python -m pytest -v
 
 ## Despliegue
 
-En [Render](https://render.com) próximamente.
+Desplegado en [Render](https://render.com): API + PostgreSQL gestionado. Las migraciones de Alembic se aplican automáticamente al arrancar el contenedor (`start.sh`).
+
+🔗 **API en vivo:** https://flota-api-ly54.onrender.com/docs
+
+> **Nota sobre el plan gratuito**: el servicio web se "duerme" tras 15 minutos de inactividad (la primera petición tras ello puede tardar 30-50s), y la base de datos gratuita de Render no garantiza persistencia a largo plazo. El esquema se recupera automáticamente en cada deploy gracias a las migraciones versionadas de Alembic.
 
 ## Estado del proyecto
 
-En desarrollo activo — próximo paso: despliegue en Render.
+Completo y desplegado — próximas mejoras posibles: autenticación, endpoint de resumen de costes por activo, tests adicionales sobre `Mantenimiento` y `TipoMantenimiento`.
 
