@@ -53,7 +53,7 @@ python -m pytest -v
 
 ## Despliegue
 
-Desplegado en [Render](https://render.com).
+En [Render](https://render.com) próximamente.
 
 ## Estado del proyecto
 
